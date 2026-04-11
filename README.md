@@ -1,2 +1,2 @@
 # WesternBridge
-And oregen trail remake coded in c#
+Text-based Oregon trail inspired game coded in c#
