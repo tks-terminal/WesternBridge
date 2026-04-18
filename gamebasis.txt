@@ -1,0 +1,36 @@
+flow of the game kinda
+start travel > action for the day
+actions include
+
+1.Travel
+ -move closer to destination
+ -chance of random event
+ -uses food 2
+
+2.Rest
+ -recovers health
+ -uses food 1
+ -no distance progress
+ -repairs wagon
+
+3.Hunt
+ -uses food 1
+ -high chance to gain food
+ -low chance to lose health
+
+4.Scavenge
+ -uses food 1
+ -chance to find medicine and small ammounts of food
+ -smaller reward than hunting but no chance of getting hurt
+ -chance to find money
+
+Variables include
+  1.DistanceAway
+  2.Health
+  3.wagon_health
+  4.FoodAmount
+  5.MedicineAmount
+  6.GoldAmount
+
+win by completing the distance
+lose by running out of wagon health or player health
