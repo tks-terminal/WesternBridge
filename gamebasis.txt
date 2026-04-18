@@ -34,3 +34,60 @@ Variables include
 
 win by completing the distance
 lose by running out of wagon health or player health
+
+
+
+Classes:
+
+1. Character class
+   Properties:
+   - Name
+   - Health
+   - IsAlive
+
+   Methods:
+   - TakeDamage(amount)
+   - Heal(amount)
+   - DisplayStats()
+
+2. Player class : Character
+   Properties:
+   - DistanceAway
+   - FoodAmount
+   - MedicineAmount
+   - WagonHealth
+   - GoldAmount
+
+   Methods:
+   - Travel()
+   - Rest()
+   - Hunt()
+   - Scavenge()
+   - UseMedicine()
+
+3. Scenario class
+   Purpose:
+   - Stores a random event and applies its effects
+
+   Properties:
+   - Description
+   - IsGood
+   - EffectType
+   - EffectAmount
+
+   Methods:
+   - ApplyToPlayer()
+   - DisplayScenario()
+
+4. Game class
+   Properties:
+   - Player CurrentPlayer
+   - List Scenarios
+   - bool IsRunning
+
+   Methods:
+   - LoadScenariosFromFile()
+   - StartGame()
+   - ShowMenu()
+   - TriggerRandomScenario()
+   - CheckGameOver()
