@@ -1,26 +1,22 @@
 # GOOD SCENARIOS
-
-1. You find extra food in an abandoned wagon. +3 FoodAmount
-2. Your group discovers a shortcut through the hills. -2 DistanceAway
-3. A trader gives you a fair deal on supplies. +2 FoodAmount, +2 MedicineAmount
-4. You find fresh water near camp. +2 Health
-5. A kind stranger helps repair your wagon. +3 WagonHealth
-6. You hunt successfully and gain food. +4 FoodAmount
-7. Your party finds a safe place to rest. +2 Health, +1 WagonHealth
-8. You discover a hidden trail. -2 DistanceAway
-9. You meet settlers who share supplies. +2 FoodAmount, +1 MedicineAmount
-10. You safely cross a dangerous pass. +2 Health, -1 DistanceAway
-
-
+You find extra food in an abandoned wagon. +3 FoodAmount
+Your group discovers a shortcut through the hills. -2 DistanceAway
+A trader gives you a fair deal on supplies. +2 FoodAmount, +2 MedicineAmount
+You find fresh water near camp. +2 Health
+A kind stranger helps repair your wagon. +3 WagonHealth
+You hunt successfully and gain food. +4 FoodAmount
+Your party finds a safe place to rest. +2 Health, +1 WagonHealth
+You discover a hidden trail. -2 DistanceAway
+You meet settlers who share supplies. +2 FoodAmount, +1 MedicineAmount
+You safely cross a dangerous pass. +2 Health, -1 DistanceAway
 # BAD SCENARIOS
-
-11. A river crossing damages your supplies. -2 FoodAmount, -2 WagonHealth
-12. A storm slows your travel for two days. +2 DistanceAway
-13. Bandits steal some of your food at night. -3 FoodAmount, -2 GoldAmount
-14. One of your oxen gets injured. -2 WagonHealth
-15. You get lost and waste valuable time. +3 DistanceAway
-16. A broken bridge forces a detour. +2 DistanceAway, -2 WagonHealth
-17. Heavy rain ruins some of your supplies. -2 FoodAmount, -1 MedicineAmount
-18. A snake bites one of your travelers. -3 Health, -1 MedicineAmount
-19. A wheel breaks on rough terrain. -3 WagonHealth
-20. Cold weather weakens the group. -2 Health, -1 FoodAmount
+A river crossing damages your supplies. -2 FoodAmount, -2 WagonHealth
+A storm slows your travel for two days. +2 DistanceAway
+Bandits steal some of your food at night. -3 FoodAmount, -2 GoldAmount
+One of your oxen gets injured. -2 WagonHealth
+You get lost and waste valuable time. +3 DistanceAway
+A broken bridge forces a detour. +2 DistanceAway, -2 WagonHealth
+Heavy rain ruins some of your supplies. -2 FoodAmount, -1 MedicineAmount
+A snake bites one of your travelers. -3 Health, -1 MedicineAmount
+A wheel breaks on rough terrain. -3 WagonHealth
+Cold weather weakens the group. -2 Health, -1 FoodAmount
