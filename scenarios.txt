@@ -1,22 +1,22 @@
 # GOOD SCENARIOS
-You find extra food in an abandoned wagon. +3 FoodAmount
-Your group discovers a shortcut through the hills. -2 DistanceAway
-A trader gives you a fair deal on supplies. +2 FoodAmount, +2 MedicineAmount
-You find fresh water near camp. +2 Health
-A kind stranger helps repair your wagon. +3 WagonHealth
-You hunt successfully and gain food. +4 FoodAmount
-Your party finds a safe place to rest. +2 Health, +1 WagonHealth
-You discover a hidden trail. -2 DistanceAway
-You meet settlers who share supplies. +2 FoodAmount, +1 MedicineAmount
-You safely cross a dangerous pass. +2 Health, -1 DistanceAway
+You find extra food in an abandoned wagon.|true|FoodAmount|3
+Your group discovers a shortcut through the hills.|true|DistanceAway|-2
+A trader gives you a fair deal on supplies.|true|FoodAmount|2
+You find fresh water near camp.|true|Health|2
+A kind stranger helps repair your wagon.|true|WagonHealth|3
+You hunt successfully and gain food.|true|FoodAmount|4
+Your party finds a safe place to rest.|true|Health|2
+You discover a hidden trail.|true|DistanceAway|-2
+You meet settlers who share supplies.|true|FoodAmount|2
+You safely cross a dangerous pass.|true|Health|2
+
 # BAD SCENARIOS
-A river crossing damages your supplies. -2 FoodAmount, -2 WagonHealth
-A storm slows your travel for two days. +2 DistanceAway
-Bandits steal some of your food at night. -3 FoodAmount, -2 GoldAmount
-One of your oxen gets injured. -2 WagonHealth
-You get lost and waste valuable time. +3 DistanceAway
-A broken bridge forces a detour. +2 DistanceAway, -2 WagonHealth
-Heavy rain ruins some of your supplies. -2 FoodAmount, -1 MedicineAmount
-A snake bites one of your travelers. -3 Health, -1 MedicineAmount
-A wheel breaks on rough terrain. -3 WagonHealth
-Cold weather weakens the group. -2 Health, -1 FoodAmount
+A river crossing damages your supplies.|false|FoodAmount|-2
+A storm slows your travel for two days.|false|DistanceAway|2
+One of your oxen gets injured.|false|WagonHealth|-2
+You get lost and waste valuable time.|false|DistanceAway|3
+A broken bridge forces a detour.|false|DistanceAway|2
+Heavy rain ruins some of your supplies.|false|FoodAmount|-2
+A snake bites one of your travelers.|false|Health|-3
+A wheel breaks on rough terrain.|false|WagonHealth|-3
+Cold weather weakens the group.|false|Health|-2
