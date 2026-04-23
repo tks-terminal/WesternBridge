@@ -58,7 +58,7 @@ public class Game
 
         while (playerName == "")
         {
-            TypeText("Enter your Travler's name: ", 30);
+            TypeText("Enter your Traveler's name: ", 30);
             playerName = Console.ReadLine();
 
             if (playerName == "")
@@ -157,8 +157,8 @@ public class Game
         {
             _currentPlayer.Travel();//travel method is in player class
             TypeText("You travel farther down the trail.", 30);
-            TypeText("Distance Away decreased by 2.", 30);
-            TypeText("Food Amount decreased by 1.", 30);
+            TypeText("You've traveled 2 miles closer to the Western Bridge.", 30);
+            TypeText("Food Amount depleated by 2.", 30);
             TriggerRandomScenario();
         }
         else if (choice == "2")
@@ -179,11 +179,11 @@ public class Game
 
             if (_currentPlayer.FoodAmount > foodBefore)//stops the problem of saying food increased by 0 if hunt fails and also only displays if food actually increases
             {
-                TypeText($"Food Amount increased by {_currentPlayer.FoodAmount - foodBefore}.", 30);
+                TypeText($"Hunt Successful! Food Amount increased by {_currentPlayer.FoodAmount - foodBefore}.", 30);
             }
             else if (_currentPlayer.Health < healthBefore)//if health decreased from hunting then display that
             {
-                TypeText($"Health decreased by {healthBefore - _currentPlayer.Health}.", 30);
+                TypeText($"You were injured during the hunt. Health decreased by {healthBefore - _currentPlayer.Health}.", 30);
             }
         }
         else if (choice == "4")
@@ -201,6 +201,10 @@ public class Game
             else if (_currentPlayer.MedicineAmount > medicineBefore)
             {
                 TypeText($"Medicine Amount increased by {_currentPlayer.MedicineAmount - medicineBefore}.", 30);
+            }
+            else
+            {
+                TypeText("You found nothing while scavenging, area was already looted.", 30);
             }
 
         }
@@ -255,7 +259,7 @@ public class Game
         Scenario chosenScenario = _scenarios[randomIndex];//takes random index and saves it in chosenScenario variable
 
         Console.WriteLine();
-        TypeText("A random event occurs...", 30);
+        TypeText("!!!A random event occurs!!!", 30);
         Console.WriteLine();
 
         chosenScenario.DisplayScenario();//from the scenario class
