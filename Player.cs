@@ -46,7 +46,7 @@ public class Player : Character //subclass of Character - Player inherits from C
     public void Travel()
     {
         _distanceAway -= 2;
-        _foodAmount -= 1;
+        _foodAmount -= 2;
     }
 
     //This method handles the Resting action
@@ -91,7 +91,7 @@ public class Player : Character //subclass of Character - Player inherits from C
         //If result is 3 the player finds nothing
         else
         {
-            Console.WriteLine("You searched everywhere but found nothing, someone scavenged this area.");
+            //Console.WriteLine("You searched everywhere but found nothing, someone scavenged this area.");
         }
     }
 
@@ -113,10 +113,10 @@ public class Player : Character //subclass of Character - Player inherits from C
         //Stats from the Character base class
         Console.WriteLine($"Name: {Name}");
         Console.WriteLine($"Health: {Health}");
-        Console.WriteLine($"Alive: {IsAlive}");
+        //Console.WriteLine($"Alive: {IsAlive}");
 
         //These are the player class stats
-        Console.WriteLine($"Distance Away: {_distanceAway}");
+        Console.WriteLine($"Miles from Western Bridge: {_distanceAway}");
         Console.WriteLine($"Food Amount: {_foodAmount}");
         Console.WriteLine($"Medicine Amount: {_medicineAmount}");
         Console.WriteLine($"Wagon Health: {_wagonHealth}");
