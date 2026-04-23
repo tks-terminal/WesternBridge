@@ -85,9 +85,9 @@ public class Game
 
         TypeText($"Welcome, {playerName}.", 30);
         Console.WriteLine();
-        TypeText("The frontier is expanding westward, and new land waits ahead.", 25);
-        TypeText("You will travel through the Wild West in search of a better future.", 25);
-        TypeText("Your choices will decide whether you survive the journey.", 25);
+        TypeText("The frontier is expanding westward, and new land waits ahead.", 15);
+        TypeText("You will travel through the Wild West in search of a better future.", 15);
+        TypeText("Your choices will decide whether you survive the journey.", 15);
         Console.WriteLine();
         TypeText("Press Enter to continue...", 30);
         Console.ReadLine();
@@ -157,27 +157,69 @@ public class Game
         {
             _currentPlayer.Travel();//travel method is in player class
             TypeText("You travel farther down the trail.", 30);
+            TypeText("Distance Away decreased by 2.", 30);
+            TypeText("Food Amount decreased by 1.", 30);
             TriggerRandomScenario();
         }
         else if (choice == "2")
         {
             _currentPlayer.Rest();//rest method is in player class
             TypeText("You stop to rest and recover.", 30);
+            TypeText("Health increased by 2.", 30);
+            TypeText("Food Amount decreased by 1.", 30);
+            TypeText("Wagon Health increased by 1.", 30);
         }
         else if (choice == "3")
         {
+            int foodBefore = _currentPlayer.FoodAmount;
+            int healthBefore = _currentPlayer.Health;
+
             _currentPlayer.Hunt(_random);//hunt method is in player class and takes random as parameter bc random is in game constructor
             TypeText("You spend the day hunting.", 30);
+
+            if (_currentPlayer.FoodAmount > foodBefore)//stops the problem of saying food increased by 0 if hunt fails and also only displays if food actually increases
+            {
+                TypeText($"Food Amount increased by {_currentPlayer.FoodAmount - foodBefore}.", 30);
+            }
+            else if (_currentPlayer.Health < healthBefore)//if health decreased from hunting then display that
+            {
+                TypeText($"Health decreased by {healthBefore - _currentPlayer.Health}.", 30);
+            }
         }
         else if (choice == "4")
         {
+            int foodBefore = _currentPlayer.FoodAmount;
+            int medicineBefore = _currentPlayer.MedicineAmount;
+
             _currentPlayer.Scavenge(_random);//scavenge method is in player class and takes random
             TypeText("You search the area for supplies.", 30);
+
+            if (_currentPlayer.FoodAmount > foodBefore)
+            {
+                TypeText($"Food Amount increased by {_currentPlayer.FoodAmount - foodBefore}.", 30);
+            }
+            else if (_currentPlayer.MedicineAmount > medicineBefore)
+            {
+                TypeText($"Medicine Amount increased by {_currentPlayer.MedicineAmount - medicineBefore}.", 30);
+            }
+
         }
         else if (choice == "5")
         {
+            int medicineBefore = _currentPlayer.MedicineAmount;
+            int healthBefore = _currentPlayer.Health;
             _currentPlayer.UseMedicine();//use medicine method is in player class
-            TypeText("You use medicine if any is available.", 30);
+            if (_currentPlayer.MedicineAmount < medicineBefore)
+            {
+                TypeText("You used medicine.", 30);
+                TypeText($"Medicine Amount decreased by {medicineBefore - _currentPlayer.MedicineAmount}.", 30);
+                TypeText($"Health increased by {_currentPlayer.Health - healthBefore}.", 30);
+            }
+            else
+            {
+                TypeText("You have no medicine to use.", 30);
+            }
+
         }
         else if (choice == "6")
         {
