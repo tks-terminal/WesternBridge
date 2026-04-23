@@ -9,7 +9,6 @@ Your party finds a safe place to rest.|true|Health|2
 You discover a hidden trail.|true|DistanceAway|-2
 You meet settlers who share supplies.|true|FoodAmount|2
 You safely cross a dangerous pass.|true|Health|2
-
 # BAD SCENARIOS
 A river crossing damages your supplies.|false|FoodAmount|-2
 A storm slows your travel for two days.|false|DistanceAway|2
@@ -20,3 +19,14 @@ Heavy rain ruins some of your supplies.|false|FoodAmount|-2
 A snake bites one of your travelers.|false|Health|-3
 A wheel breaks on rough terrain.|false|WagonHealth|-3
 Cold weather weakens the group.|false|Health|-2
+Bandits steal food from your wagon.|false|FoodAmount|-3
+Your wagon gets stuck in deep mud.|false|WagonHealth|-2
+A sickness spreads through the camp.|false|Health|-3
+You take the wrong trail and lose time.|false|DistanceAway|2
+Spoiled meat makes the group ill.|false|Health|-2
+A loose wheel slows your travel.|false|DistanceAway|2
+A bear attacks your campsite.|false|Health|-100
+Your supplies fall into a river.|false|FoodAmount|-3
+The wagon axle cracks during travel.|false|WagonHealth|-4
+A harsh windstorm damages the wagon cover.|false|WagonHealth|-2
+Your group runs low on food after a long day.|false|FoodAmount|-2
