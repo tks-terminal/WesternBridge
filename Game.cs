@@ -103,7 +103,7 @@ public class Game
     //Loads scenarios from scenarios.txt
     public void LoadScenariosFromFile()
     {
-        string filePath = @"C:\Users\mostw\Documents\C#App\WesternBridge\Scenario.txt";
+        string filePath = "Scenario.txt";
 
         foreach (string line in File.ReadAllLines(filePath))
         {
@@ -158,15 +158,32 @@ public class Game
             _currentPlayer.Travel();//travel method is in player class
             TypeText("You travel farther down the trail.", 30);
             TypeText("You've traveled 2 miles closer to the Western Bridge.", 30);
-            TypeText("Food Amount depleated by 2.", 30);
+            if (_currentPlayer.FoodAmount > 0)
+            {
+                TypeText("Food Amount decreased by 2.", 30);
+            }
+            else
+            {
+                TypeText("You have no food to eat during your travel.", 30);
+                TypeText("Health decreased by 3 due to starvation.", 30);
+            }
             TriggerRandomScenario();
         }
         else if (choice == "2")
         {
             _currentPlayer.Rest();//rest method is in player class
             TypeText("You stop to rest and recover.", 30);
-            TypeText("Health increased by 2.", 30);
-            TypeText("Food Amount decreased by 1.", 30);
+            
+            if (_currentPlayer.FoodAmount > 0)
+            {
+                TypeText("Food Amount decreased by 1.", 30);
+                TypeText("Health increased by 2.", 30);
+            }
+            else
+            {
+                TypeText("You have no food to eat while resting.", 30);
+                TypeText("Health decreased by 3 due to starvation.", 30);
+            }
             TypeText("Wagon Health increased by 1.", 30);
         }
         else if (choice == "3")
@@ -290,7 +307,14 @@ public class Game
         else if (_currentPlayer.Health <= 0 || !_currentPlayer.IsAlive)//if health is 0 or player dead
         {
             Console.Clear();
-            TypeText("You did not survive the journey.", 30);
+            TypeText("You died trying to reach the Western Bridge.", 30);
+            _isRunning = false;
+        }
+        else if (_currentPlayer.WagonHealth <= 0)
+        {
+            Console.Clear();
+            TypeText("Your wagon broke down and you couldn't continue.", 30);
+            TypeText("You failed trying to reach the Western Bridge.", 30);
             _isRunning = false;
         }
     }
