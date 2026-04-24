@@ -46,14 +46,29 @@ public class Player : Character //subclass of Character - Player inherits from C
     public void Travel()
     {
         _distanceAway -= 2;
-        _foodAmount -= 2;
+
+        if(_foodAmount > 0)
+        {
+            _foodAmount -= 2;
+        }
+        else
+        {
+            TakeDamage(3); //TakeDamage is inherited from the Character class.
+        }
     }
 
     //This method handles the Resting action
     public void Rest()
     {
         Heal(2); //Heal(2) is inherited from the Character class.
-        _foodAmount -= 1;
+            if(_foodAmount > 0)
+            {
+                _foodAmount -= 1;
+            }
+            else
+            {
+                TakeDamage(3); //TakeDamage is inherited from the Character class.
+            }
         _wagonHealth += 1;
     }
 
